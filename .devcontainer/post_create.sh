@@ -7,5 +7,5 @@ wget -nH https://raw.githubusercontent.com/coin-or/coinbrew/master/coinbrew
 chmod u+x coinbrew
 bash coinbrew fetch Cbc@master
 bash coinbrew build Cbc@master --no-prompt --prefix=/usr/local --tests=none --enable-cbc-parallel
-sudo apt-get install cmake
-sudo apt-get install libblas-dev liblapack-dev
+sudo apt-get install -y cmake
+sudo apt-get install -y libblas-dev liblapack-dev
