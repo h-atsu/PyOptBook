@@ -23,7 +23,6 @@
                 "yzhang.markdown-all-in-one",
                 "mechatroner.rainbow-csv",
                 "ms-toolsai.jupyter",
-                "ckolkman.vscode-postgres"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/root/.local/share/uv/python",
@@ -49,9 +48,9 @@
     "remoteUser": "vscode",
     "containerEnv": {
         "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/src",
-        "UV_LINK_MODE":"copy",
-        "PMIP_CBC_LIBRARY":"/usr/local/lib/libCbc.so",
-        "LD_LIBRARY_PATH":"/home/haroldo/prog/lib"
+        "UV_LINK_MODE": "copy",
+        "PMIP_CBC_LIBRARY": "/usr/local/lib/libCbc.so",
+        "LD_LIBRARY_PATH": "/home/haroldo/prog/lib"
     },
     "postCreateCommand": "bash .devcontainer/post_create.sh",
     "postAttachCommand": "bash .devcontainer/post_attach.sh"
