@@ -26,8 +26,6 @@ dependencies = [
     "scipy>=1.14.1",
     "seaborn>=0.13.2",
 ]
-<<<<<<< HEAD
-=======
 
 [tool.ruff]
 target-version = "py310" # 適用したいバージョンをする
@@ -51,4 +49,3 @@ lint.ignore = [
     "N801", # Class name
 ]
 
->>>>>>> 7e7ec17dff3854f1e4817272f1bdf6f2ec15c0f5

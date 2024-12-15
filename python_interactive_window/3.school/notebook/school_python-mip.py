@@ -463,6 +463,19 @@ for i, (s1, s2) in enumerate(SS):
     print(f"s2:{s2}-{c2}")
     print()
 
+# %%
+moment_df = result_df.groupby("assigned_class")["score"].agg([
+    ('mean', 'mean'),     # 平均値
+    ('std', 'std'),  # 標準偏差
+    ('skewness', lambda x: x.skew()),  # 歪度
+    ('kurtosis', lambda x: x.kurtosis())  # 尖度
+])
+
+# %%
+moment_df.apply(lambda x: x.max() - x.min(), axis=0)
+
+# %%
+
 # %% [markdown]
 # ### ②設定した制約の見直しと課題の洗い出し
 
@@ -771,5 +784,17 @@ for i, c in enumerate(C):
         title=f"Class:{c:s}",
     )
     ax.hist(cls_df["score"], bins=range(0, 500, 40))
+
+
+# %%
+moment_df = result_df2.groupby("assigned_class")["score"].agg([
+    ('mean', 'mean'),     # 平均値
+    ('std', 'std'),  # 標準偏差
+    ('skewness', lambda x: x.skew()),  # 歪度
+    ('kurtosis', lambda x: x.kurtosis())  # 尖度
+])
+
+# %%
+moment_df.apply(lambda x: x.max() - x.min(), axis=0)
 
 # %%
