@@ -1,6 +1,6 @@
 {
     "name": "PyOptBook",
-    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye",
     "features": {
         "ghcr.io/va-h/devcontainers-features/uv:1": {}
     },
@@ -23,7 +23,10 @@
                 "yzhang.markdown-all-in-one",
                 "mechatroner.rainbow-csv",
                 "ms-toolsai.jupyter",
+<<<<<<< HEAD
                 "ckolkman.vscode-postgres"
+=======
+>>>>>>> 7e7ec17dff3854f1e4817272f1bdf6f2ec15c0f5
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/root/.local/share/uv/python",
@@ -49,9 +52,15 @@
     "remoteUser": "vscode",
     "containerEnv": {
         "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/src",
+<<<<<<< HEAD
         "UV_LINK_MODE":"copy",
         "PMIP_CBC_LIBRARY":"/usr/local/lib/libCbc.so",
         "LD_LIBRARY_PATH":"/home/haroldo/prog/lib"
+=======
+        "UV_LINK_MODE": "copy",
+        "PMIP_CBC_LIBRARY": "/usr/local/lib/libCbc.so",
+        "LD_LIBRARY_PATH": "/home/haroldo/prog/lib"
+>>>>>>> 7e7ec17dff3854f1e4817272f1bdf6f2ec15c0f5
     },
     "postCreateCommand": "bash .devcontainer/post_create.sh",
     "postAttachCommand": "bash .devcontainer/post_attach.sh"
