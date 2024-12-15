@@ -1,6 +1,6 @@
 {
     "name": "PyOptBook",
-    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye",
     "features": {
         "ghcr.io/va-h/devcontainers-features/uv:1": {}
     },
