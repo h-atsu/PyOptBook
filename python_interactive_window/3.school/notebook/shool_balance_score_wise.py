@@ -35,7 +35,7 @@ S_leader = [row.student_id for row in s_df.itertuples() if row.leader_flag == 1]
 S_support = [row.student_id for row in s_df.itertuples() if row.support_flag == 1]
 
 # 得点の集合
-P = sorted(s_df["score"].to_list())
+P = set(s_df["score"].to_list())
 
 # 得点pが生徒の集合
 S_p = {}
