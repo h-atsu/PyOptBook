@@ -35,7 +35,7 @@ S_leader = [row.student_id for row in s_df.itertuples() if row.leader_flag == 1]
 S_support = [row.student_id for row in s_df.itertuples() if row.support_flag == 1]
 
 # 得点の集合
-P = sorted(s_df["score"].to_list())
+P = set(s_df["score"].to_list())
 
 # 得点p以下の生徒の集合
 S_p = {}
@@ -84,14 +84,14 @@ for c in C:
     prob += mip.xsum([x[s, c] for s in S_female]) <= 20
 
 
-# (4) 各クラスの学力試験の平均点は学年平均点±10点とする。
-for c in C:
-    prob += mip.xsum([x[s, c] * score[s] for s in S]) >= (score_mean - 10) * mip.xsum(
-        [x[s, c] for s in S]
-    )
-    prob += mip.xsum([x[s, c] * score[s] for s in S]) <= (score_mean + 10) * mip.xsum(
-        [x[s, c] for s in S]
-    )
+# # (4) 各クラスの学力試験の平均点は学年平均点±10点とする。
+# for c in C:
+#     prob += mip.xsum([x[s, c] * score[s] for s in S]) >= (score_mean - 10) * mip.xsum(
+#         [x[s, c] for s in S]
+#     )
+#     prob += mip.xsum([x[s, c] * score[s] for s in S]) <= (score_mean + 10) * mip.xsum(
+#         [x[s, c] for s in S]
+#     )
 
 
 # (5)各クラスにリーダー気質の生徒を2人以上割り当てる。
