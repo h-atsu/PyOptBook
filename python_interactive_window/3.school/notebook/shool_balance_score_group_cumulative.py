@@ -59,15 +59,15 @@ prob = mip.Model()
 x = {sc: prob.add_var(var_type="B") for sc in SC}
 
 # 得点p以下の累積分布の偏り具合を表す変数
-z = {p: prob.add_var(var_type="C") for p in P}
+z = {p: prob.add_var(var_type="C", lb=0) for p in P}
 
 
 # 制約条件の定義
 # (0)分布偏りの制約
 for p in P:
     for c in C:
-        prob += -z[p] <= mip.xsum([x[s, c] for s in S_p[p]])
-        prob += mip.xsum([x[s, c] for s in S_p[p]]) <= z[p]
+        prob += -z[p] <= mip.xsum([x[s, c] for s in S_p[p]]) - int(len(S_p[p]) / len(C))
+        prob += mip.xsum([x[s, c] for s in S_p[p]]) - int(len(S_p[p]) / len(C)) <= z[p]
 
 # (1)各生徒は１つのクラスに割り当てる
 for s in S:
