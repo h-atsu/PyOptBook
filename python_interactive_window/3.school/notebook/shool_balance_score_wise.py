@@ -84,14 +84,14 @@ for c in C:
     prob += mip.xsum([x[s, c] for s in S_female]) <= 20
 
 
-# (4) 各クラスの学力試験の平均点は学年平均点±10点とする。
-for c in C:
-    prob += mip.xsum([x[s, c] * score[s] for s in S]) >= (score_mean - 10) * mip.xsum(
-        [x[s, c] for s in S]
-    )
-    prob += mip.xsum([x[s, c] * score[s] for s in S]) <= (score_mean + 10) * mip.xsum(
-        [x[s, c] for s in S]
-    )
+# # (4) 各クラスの学力試験の平均点は学年平均点±10点とする。
+# for c in C:
+#     prob += mip.xsum([x[s, c] * score[s] for s in S]) >= (score_mean - 10) * mip.xsum(
+#         [x[s, c] for s in S]
+#     )
+#     prob += mip.xsum([x[s, c] * score[s] for s in S]) <= (score_mean + 10) * mip.xsum(
+#         [x[s, c] for s in S]
+#     )
 
 
 # (5)各クラスにリーダー気質の生徒を2人以上割り当てる。
